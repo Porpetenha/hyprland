@@ -1,17 +1,18 @@
 #!/bin/bash
 
-DOTFILES_DIR=~/dotfiles_
+DOTFILES_DIR=~/dotfiles
 CONFIG_DIR=~/.config
 
 declare -A DOTFILES
 DOTFILES=(
     ["waybar"]="$CONFIG_DIR/waybar"
+    ["hypr"]="CONFIG_DIR/hypr"
 )
 
-#declare -A HOME_FILES
-#HOME_FILES=(
-#    [".bashrc"]="$HOME/.bashrc"
-#)
+declare -A HOME_FILES
+HOME_FILES=(
+    [".bashrc"]="$HOME/.bashrc"
+)
 
 echo "Setting up dotfiles..."
 
