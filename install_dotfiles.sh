@@ -5,8 +5,13 @@ CONFIG_DIR=~/.config
 
 declare -A DOTFILES
 DOTFILES=(
+    ["hypr"]="$CONFIG_DIR/hypr"
     ["waybar"]="$CONFIG_DIR/waybar"
-    ["hypr"]="CONFIG_DIR/hypr"
+    ["rofi"]="$CONFIG_DIR/rofi"
+    ["kitty"]="$CONFIG_DIR/kitty"
+    ["dunst"]="$CONFIG_DIR/dunst"
+    ["btop"]="$CONFIG_DIR/btop"
+    ["fastfetch"]="$CONFIG_DIR/fastfetch"
 )
 
 declare -A HOME_FILES
