@@ -1,0 +1,38 @@
+#!/bin/bash
+
+DOTFILES_DIR=~/dotfiles_
+CONFIG_DIR=~/.config
+
+declare -A DOTFILES
+DOTFILES=(
+    ["waybar"]="$CONFIG_DIR/waybar"
+)
+
+#declare -A HOME_FILES
+#HOME_FILES=(
+#    [".bashrc"]="$HOME/.bashrc"
+#)
+
+echo "Setting up dotfiles..."
+
+for folder in "${!DOTFILES[@]}"; do
+    TARGET="${DOTFILES[$folder]}"
+    SOURCE="$DOTFILES_DIR/$folder"
+
+    rm -rf "$TARGET"
+
+    ln -sfn "$SOURCE" "$TARGET"
+    echo "Linked $SOURCE -> $TARGET"
+done
+
+for file in "${!HOME_FILES[@]}"; do
+    SOURCE="$DOTFILES_DIR/$file"
+
+    rm "$HOME/$file"
+    ln -sf "$SOURCE" "$HOME"
+    echo "Copied $SOURCE -> $HOME"
+done
+
+hyprctl reload
+
+echo "Dotfiles setup complete!"
