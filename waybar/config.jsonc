@@ -130,7 +130,7 @@
 
     "custom/sheet": {
         "format": "",
-        "on-click": "bash /usr/local/bin/libreoffice-custom --calc",
+        "on-click": "libreoffice --calc", //"bash /usr/local/bin/libreoffice-custom --calc",
         "tooltip": true,
         "tooltip-format": "Planilha"
     }
